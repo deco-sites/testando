@@ -9,10 +9,9 @@ import * as $1 from "./routes/_app.tsx";
 import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/index.tsx";
 import * as $$0 from "./islands/LiveControls.tsx";
-import * as $$$0 from "./sections/GetStarted.tsx";
-import * as $$$1 from "./sections/Head.tsx";
-import * as $$$2 from "./sections/Markdown.tsx";
-import * as $$$3 from "./sections/QuillText.tsx";
+import * as $$$0 from "./sections/OfertasExclusivas.tsx";
+import * as $$$1 from "./sections/SliderMain.tsx";
+import * as $$$2 from "./sections/header.tsx";
 import * as $$$$0 from "./functions/LoadGitHubRaw.ts";
 
 const manifest: DecoManifest = {
@@ -24,110 +23,111 @@ const manifest: DecoManifest = {
   },
   islands: { "./islands/LiveControls.tsx": $$0 },
   sections: {
-    "./sections/GetStarted.tsx": $$$0,
-    "./sections/Head.tsx": $$$1,
-    "./sections/Markdown.tsx": $$$2,
-    "./sections/QuillText.tsx": $$$3,
+    "./sections/OfertasExclusivas.tsx": $$$0,
+    "./sections/SliderMain.tsx": $$$1,
+    "./sections/header.tsx": $$$2,
   },
   functions: { "./functions/LoadGitHubRaw.ts": $$$$0 },
   schemas: {
-    "./sections/GetStarted.tsx": {
+    "./sections/OfertasExclusivas.tsx": {
       "inputSchema": {
-        "title": " Get Started",
+        "title": " Ofertas Exclusivas",
         "type": "object",
         "properties": {
-          "enableInspectVSCode": {
-            "type": [
-              "boolean",
-              "null",
-            ],
-            "title": "Enable Inspect V S Code",
-          },
-        },
-        "required": [],
-      },
-      "outputSchema": null,
-    },
-    "./sections/Head.tsx": {
-      "inputSchema": {
-        "title": " Head",
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string",
-            "title": "Title",
-          },
-          "description": {
-            "type": "string",
-            "title": "Description",
-          },
-          "url": {
-            "type": "string",
-            "title": "Url",
-          },
-          "imageUrl": {
-            "type": "string",
-            "title": "Image Url",
-          },
-          "faviconUrl": {
-            "type": "string",
-            "title": "Favicon Url",
-          },
-          "styleUrls": {
-            "type": "array",
-            "items": {
-              "type": "string",
+          "imgOfertasExclusivas": {
+            "title": "Img Ofertas Exclusivas",
+            "type": "object",
+            "properties": {
+              "ofertas": {
+                "type": "string",
+                "title": "Ofertas",
+              },
+              "ofertas1": {
+                "type": "string",
+                "title": "Ofertas1",
+              },
+              "ofertas2": {
+                "type": "string",
+                "title": "Ofertas2",
+              },
             },
-            "title": "Style Urls",
+            "required": [
+              "ofertas",
+              "ofertas1",
+              "ofertas2",
+            ],
           },
-          "themeColor": {
-            "type": "string",
-            "title": "Theme Color",
+          "imgPromoImperdivel": {
+            "title": "Img Promo Imperdivel",
+            "type": "object",
+            "properties": {
+              "promo": {
+                "type": "string",
+                "title": "Promo",
+              },
+              "promo1": {
+                "type": "string",
+                "title": "Promo1",
+              },
+              "promo2": {
+                "type": "string",
+                "title": "Promo2",
+              },
+            },
+            "required": [
+              "promo",
+              "promo1",
+              "promo2",
+            ],
           },
         },
         "required": [
-          "title",
-          "description",
-          "url",
-          "imageUrl",
-          "faviconUrl",
-          "styleUrls",
-          "themeColor",
+          "imgOfertasExclusivas",
+          "imgPromoImperdivel",
         ],
       },
       "outputSchema": null,
     },
-    "./sections/Markdown.tsx": {
-      "inputSchema": {
-        "title": " Markdown",
-        "type": "object",
-        "properties": {
-          "text": {
-            "$id": "5b1cd5713a375e18bb93e9635b8a2dc5fc2672cf",
-            "format": "live-function",
-            "type": "string",
-            "title": "Text",
-          },
-        },
-        "required": [
-          "text",
-        ],
-      },
+    "./sections/SliderMain.tsx": {
+      "inputSchema": null,
       "outputSchema": null,
     },
-    "./sections/QuillText.tsx": {
+    "./sections/header.tsx": {
       "inputSchema": {
-        "title": " Quill Text",
+        "title": "Header",
         "type": "object",
         "properties": {
-          "html": {
-            "format": "html",
-            "type": "string",
-            "title": "Html",
+          "imgSrc": {
+            "title": "Img Src",
+            "type": "object",
+            "properties": {
+              "logo": {
+                "type": "string",
+                "title": "Logo",
+              },
+              "navBarToggle": {
+                "type": "string",
+                "title": "Nav Bar Toggle",
+              },
+              "cartToggle": {
+                "type": "string",
+                "title": "Cart Toggle",
+              },
+              "searchToggle": {
+                "type": "string",
+                "title": "Search Toggle",
+              },
+            },
+            "required": [
+              "logo",
+              "navBarToggle",
+              "cartToggle",
+              "searchToggle",
+            ],
           },
         },
         "required": [
-          "html",
+          "imgSrc",
         ],
       },
       "outputSchema": null,
