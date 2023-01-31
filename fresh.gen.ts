@@ -9,9 +9,10 @@ import * as $1 from "./routes/_app.tsx";
 import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/index.tsx";
 import * as $$0 from "./islands/LiveControls.tsx";
-import * as $$$0 from "./sections/OfertasExclusivas.tsx";
-import * as $$$1 from "./sections/SliderMain.tsx";
-import * as $$$2 from "./sections/header.tsx";
+import * as $$$0 from "./sections/Destaques.tsx";
+import * as $$$1 from "./sections/OfertasExclusivas.tsx";
+import * as $$$2 from "./sections/SliderMain.tsx";
+import * as $$$3 from "./sections/header.tsx";
 import * as $$$$0 from "./functions/LoadGitHubRaw.ts";
 
 const manifest: DecoManifest = {
@@ -23,12 +24,48 @@ const manifest: DecoManifest = {
   },
   islands: { "./islands/LiveControls.tsx": $$0 },
   sections: {
-    "./sections/OfertasExclusivas.tsx": $$$0,
-    "./sections/SliderMain.tsx": $$$1,
-    "./sections/header.tsx": $$$2,
+    "./sections/Destaques.tsx": $$$0,
+    "./sections/OfertasExclusivas.tsx": $$$1,
+    "./sections/SliderMain.tsx": $$$2,
+    "./sections/header.tsx": $$$3,
   },
   functions: { "./functions/LoadGitHubRaw.ts": $$$$0 },
   schemas: {
+    "./sections/Destaques.tsx": {
+      "inputSchema": {
+        "title": " Destaques",
+        "type": "object",
+        "properties": {
+          "imgsDestaques": {
+            "title": "Imgs Destaques",
+            "type": "object",
+            "properties": {
+              "destaque": {
+                "type": "string",
+                "title": "Destaque",
+              },
+              "destaque1": {
+                "type": "string",
+                "title": "Destaque1",
+              },
+              "destaque2": {
+                "type": "string",
+                "title": "Destaque2",
+              },
+            },
+            "required": [
+              "destaque",
+              "destaque1",
+              "destaque2",
+            ],
+          },
+        },
+        "required": [
+          "imgsDestaques",
+        ],
+      },
+      "outputSchema": null,
+    },
     "./sections/OfertasExclusivas.tsx": {
       "inputSchema": {
         "title": " Ofertas Exclusivas",
@@ -89,7 +126,38 @@ const manifest: DecoManifest = {
       "outputSchema": null,
     },
     "./sections/SliderMain.tsx": {
-      "inputSchema": null,
+      "inputSchema": {
+        "title": " Slider Main",
+        "type": "object",
+        "properties": {
+          "imgSlider": {
+            "title": "Img Slider",
+            "type": "object",
+            "properties": {
+              "slider": {
+                "type": "string",
+                "title": "Slider",
+              },
+              "slider1": {
+                "type": "string",
+                "title": "Slider1",
+              },
+              "slider2": {
+                "type": "string",
+                "title": "Slider2",
+              },
+            },
+            "required": [
+              "slider",
+              "slider1",
+              "slider2",
+            ],
+          },
+        },
+        "required": [
+          "imgSlider",
+        ],
+      },
       "outputSchema": null,
     },
     "./sections/header.tsx": {
@@ -105,24 +173,24 @@ const manifest: DecoManifest = {
                 "type": "string",
                 "title": "Logo",
               },
-              "navBarToggle": {
+              "navBar": {
                 "type": "string",
-                "title": "Nav Bar Toggle",
+                "title": "Nav Bar",
               },
-              "cartToggle": {
+              "cart": {
                 "type": "string",
-                "title": "Cart Toggle",
+                "title": "Cart",
               },
-              "searchToggle": {
+              "search": {
                 "type": "string",
-                "title": "Search Toggle",
+                "title": "Search",
               },
             },
             "required": [
               "logo",
-              "navBarToggle",
-              "cartToggle",
-              "searchToggle",
+              "navBar",
+              "cart",
+              "search",
             ],
           },
         },
